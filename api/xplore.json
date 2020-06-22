@@ -1,0 +1,112 @@
+{
+    "users" : [
+        {
+            "id" : 1,
+            "username" : "dyl_byl",
+            "email" : "dylan@dylan.com",
+            "password" : "123"
+        },
+        {
+            "id" : 2,
+            "username" : "joshb",
+            "email" : "josh@josh.com",
+            "password" : "123"
+        }
+    ],
+    "routes" : [
+        {
+            "id" : 1,
+            "userId" : 1,
+            "locationId" : 1,
+            "routeName" : "Cat Statue Hunt",
+            "routeLength" : "10 minutes",
+            "directions" : "Walk west towards 8th Street. Make a left there and continue following the park's outer trail. Make a left toward the parking lot. Continue on the trail past the lot until you see a stone table on the right.",
+            "date" : "06/20/2020"
+        },
+        {
+            "id" : 2,
+            "userId" : 2,
+            "locationId" : 1,
+            "routeName" : "Majorly Cracked Sidewalk",
+            "routeLength" : "5 minutes",
+            "directions" : "If an uprooted sidewalk you must see, 50 paces north you must be",
+            "date" : "06/20/2020"
+        }
+    ],
+    "tags" : [
+        {
+            "id" : 1,
+            "name" : "Great View"
+        },
+        {
+            "id" : 2,
+            "name" : "Treasure"
+        },
+        {
+            "id" : 3,
+            "name" : "Exercise"
+        },
+        {
+            "id" : 4,
+            "name" : "Secret Area"
+        },
+        {
+            "id" : 5,
+            "name" : "Riddle Route"
+        },
+        {
+            "id" : 6,
+            "name" : "Step-By-Step"
+        },
+        {
+            "id" : 7,
+            "name" : "Nice Walk"
+        }
+    ],
+    "comments" : [
+        {
+            "id" : 1,
+            "routeId" : 2,
+            "userId" : 1,
+            "text" : "this is literally just a cracked sidewalk",
+            "date" : "06/21/2020"
+        },
+        {
+            "id" : 2,
+            "routeId" : 1,
+            "userId" : 2,
+            "text" : "Cute but I guarantee it'll be gone by tomorrow",
+            "date" : "06/20/2020"
+        }
+    ],
+    "locations" : [
+        {
+            "id" : 1,
+            "name" : "Ritter Park Fountain",
+            "latitude" : "38.4085",
+            "longitude" : "-82.4387"
+        }
+    ],
+    "tag-routes" : [
+        {
+            "id" : 1,
+            "routeId" : 2,
+            "tagId" : 5
+        },
+        {
+            "id" : 2,
+            "routeId" : 2,
+            "tagId" : 1
+        },
+        {
+            "id" : 3,
+            "routeId" : 1,
+            "tagId" : 6
+        },
+        {
+            "id" : 4,
+            "routeId" : 1,
+            "tagId" : 2
+        }
+    ]
+}
