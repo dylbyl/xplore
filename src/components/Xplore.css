@@ -1,0 +1,15 @@
+.route-btn{
+    background-color: #28a745;
+    border: none;
+    color: cornsilk;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin: 1em;
+    width: 25%;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
