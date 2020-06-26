@@ -2,6 +2,8 @@ import React, { Component, useState } from "react";
 import RouteManager from "../../modules/RouteManager";
 import RouteSelect from "./RouteSelect";
 import "./RouteForm.css"
+import ReactMapGL, { Marker, NavigationControl } from "react-map-gl";
+import Pin from "./Pin.js";
 
 class RouteForm extends Component {
   state = {
@@ -14,12 +16,46 @@ class RouteForm extends Component {
     locations: [],
     date: new Date(),
     loadingStatus: true,
+    viewport: {
+      width: 400,
+      height: 400,
+      latitude: 38.4192,
+      longitude: -82.4452,
+      zoom: 12,
+    },
+    marker: {
+      longitude: null,
+      latitude: null,
+    },
   };
 
   handleFieldChange = (evt) => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
+  };
+
+  handleLocationChange = (evt) => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+    this.state.locations.forEach(location => {
+       if (location.id == evt.target.value){
+         const viewport = {
+          ...this.state.viewport,
+          longitude: location.longitude,
+          latitude: location.latitude,
+          zoom: 16,
+        };
+    
+        const marker = {
+          ...this.state.marker,
+          longitude: location.longitude,
+          latitude: location.latitude,
+        };
+        this.setState({ viewport, marker })
+       }
+    })
   };
 
   /*  Local method for validation, set loadingStatus, create task      object, invoke the TaskManager post method, and redirect to the full task list
@@ -92,6 +128,9 @@ class RouteForm extends Component {
   }
 
   render() {
+    let sortedLocations = this.state.locations.sort((a, b) =>
+    a.name > b.name ? 1 : -1
+  );
     return (
       <>
         <div className="route-center">
@@ -124,10 +163,10 @@ class RouteForm extends Component {
                 <select
                   name="locationId"
                   id="locationId"
-                  onChange={this.handleFieldChange}
+                  onChange={this.handleLocationChange}
                 >
                   <option value="undefined">--Select--</option>
-                  {this.state.locations.map((locationFromState) => (
+                  {sortedLocations.map((locationFromState) => (
                     <RouteSelect selectProp={locationFromState} key={locationFromState.id} />
                   ))}
                 </select>
@@ -173,6 +212,22 @@ class RouteForm extends Component {
               </div>
             </fieldset>
           </form>
+
+          <ReactMapGL
+          className="route-map"
+              {...this.state.viewport}
+              mapboxApiAccessToken={
+                "pk.eyJ1IjoiZHlsYnlsIiwiYSI6ImNrYmh6M2M0YTBhNmcycm04bzF0MGVxNGMifQ.zH776ZxDF0GCyvco-a2WiQ"
+              }
+              onViewportChange={(viewport) => this.setState({ viewport })}
+            >
+              <Marker
+                longitude={this.state.marker.longitude - 0.0001}
+                latitude={this.state.marker.latitude + 0.0001}
+              >
+                <Pin size={20} />
+              </Marker>
+            </ReactMapGL>
         </div>
       </>
     );

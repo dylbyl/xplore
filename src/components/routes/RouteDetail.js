@@ -3,6 +3,9 @@ import RouteManager from "../../modules/RouteManager";
 import CommentManager from "../../modules/CommentManager";
 import CommentCard from "../comments/CommentCard"
 import CommentForm from "../comments/CommentForm"
+import ReactMapGL, { Marker, NavigationControl } from "react-map-gl";
+import Pin from "./Pin.js";
+import "./RouteDetail.css"
 
 class BookDetail extends Component {
   state = {
@@ -16,7 +19,18 @@ class BookDetail extends Component {
     directions: "",
     date: "",
     comments: [],
-    loadingStatus: true
+    loadingStatus: true,
+    viewport: {
+      width: 400,
+      height: 400,
+      latitude: 38.4192,
+      longitude: -82.4452,
+      zoom: 12,
+    },
+    marker: {
+      longitude: null,
+      latitude: null,
+    },
   };
 
   deleteRoute = () => {
@@ -65,7 +79,18 @@ class BookDetail extends Component {
             directions: route.directions,
             date: route.date,
             comments: route.comments,
-            loadingStatus: false
+            loadingStatus: false,
+            viewport: {
+              width: 400,
+              height: 400,
+              latitude: route.location.latitude,
+              longitude: route.location.longitude,
+              zoom: 16,
+            },
+            marker: {
+              longitude: route.location.longitude,
+              latitude: route.location.latitude,
+            },
         });
     })
   }
@@ -78,8 +103,9 @@ class BookDetail extends Component {
     return (
       <>
       <section className="dashboard-content">
-      <div className="route-card">
-        <div className="route-card-content">
+        <div className="left-column">
+      <div className="route-detail">
+        <div className="route-detail-content">
         <h3 className="route-header">{this.state.routeName}</h3>
           <b>Location: </b>{this.state.location}
           <br />
@@ -131,6 +157,23 @@ class BookDetail extends Component {
             ))}
             <CommentForm routeId={this.props.routeId} reloadComments={this.reloadComments}/>
       </div>
+      </div>
+      <ReactMapGL
+          className="route-detail-map"
+              {...this.state.viewport}
+              mapboxApiAccessToken={
+                "pk.eyJ1IjoiZHlsYnlsIiwiYSI6ImNrYmh6M2M0YTBhNmcycm04bzF0MGVxNGMifQ.zH776ZxDF0GCyvco-a2WiQ"
+              }
+              onViewportChange={(viewport) => this.setState({ viewport })}
+            >
+              <Marker
+                longitude={this.state.marker.longitude - 0.0001}
+                latitude={this.state.marker.latitude + 0.0001}
+              >
+                <Pin size={20} />
+              </Marker>
+            </ReactMapGL>
+      
       </section>
       </>
     );

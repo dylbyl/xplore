@@ -133,8 +133,50 @@
     {
       "id": 1,
       "name": "Ritter Park Fountain",
-      "latitude": "38.4085",
-      "longitude": "-82.4387"
+      "latitude": 38.4084,
+      "longitude": -82.4386
+    },
+    {
+      "id": 2,
+      "name": "Pullman Square",
+      "latitude": 38.4222,
+      "longitude": -82.4434
+    },
+    {
+      "id": 3,
+      "name": "Marshall University",
+      "latitude": 38.4221,
+      "longitude": -82.4288
+    },
+    {
+      "id": 4,
+      "name": "St. Mary's Medical Center",
+      "latitude": 38.4316,
+      "longitude": -82.4011
+    },
+    {
+      "id": 5,
+      "name": "Cabell Huntington Hospital",
+      "latitude": 38.4098,
+      "longitude": -82.4281
+    },
+    {
+      "id": 6,
+      "name": "Camden Park",
+      "latitude": 38.3969,
+      "longitude": -82.5301
+    },
+    {
+      "id": 7,
+      "name": "Veterans Affairs Medical Center",
+      "latitude": 38.3771,
+      "longitude": -82.5175
+    },
+    {
+      "id": 8,
+      "name": "David Harris Riverfront Park",
+      "latitude": 38.4244,
+      "longitude": -82.4405
     }
   ]
 }
