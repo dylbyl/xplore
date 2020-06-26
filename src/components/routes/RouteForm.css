@@ -50,3 +50,9 @@ fieldset .formgrid {
     justify-content: center;
     margin: 2em;
 }
+
+.route-map{
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
