@@ -59,7 +59,7 @@ class RouteForm extends Component {
     } else {
       this.setState({ loadingStatus: true });
       const route = {
-        userId: 1,
+        userId: localStorage.getItem("userId"),
         locationId: this.state.locationId,
         routeName: this.state.routeName,
         routeLength: this.state.routeLength,
@@ -104,7 +104,6 @@ class RouteForm extends Component {
                   type="text"
                   required
                   onChange={this.handleFieldChange}
-                  onKeyUp={this.handleKeyUp}
                   id="routeName"
                   placeholder="Description of route"
                 />
@@ -117,7 +116,7 @@ class RouteForm extends Component {
                 >
                   <option value="undefined">--Select--</option>
                   {this.state.tags.map((tagFromState) => (
-                    <RouteSelect tagProp={tagFromState} key={tagFromState.id} />
+                    <RouteSelect selectProp={tagFromState} key={tagFromState.id} />
                   ))}
                 </select>
                 <br />
@@ -128,8 +127,8 @@ class RouteForm extends Component {
                   onChange={this.handleFieldChange}
                 >
                   <option value="undefined">--Select--</option>
-                  {this.state.locations.map((tagFromState) => (
-                    <RouteSelect tagProp={tagFromState} key={tagFromState.id} />
+                  {this.state.locations.map((locationFromState) => (
+                    <RouteSelect selectProp={locationFromState} key={locationFromState.id} />
                   ))}
                 </select>
                 <br />
@@ -138,7 +137,6 @@ class RouteForm extends Component {
                   type="text"
                   required
                   onChange={this.handleFieldChange}
-                  onKeyUp={this.handleKeyUp}
                   id="routeLength"
                   placeholder="Time length of route"
                 />
@@ -150,7 +148,6 @@ class RouteForm extends Component {
                   rows="5"
                   cols="40"
                   onChange={this.handleFieldChange}
-                  onKeyUp={this.handleKeyUp}
                   id="directions"
                   placeholder="Directions for route"
                 />

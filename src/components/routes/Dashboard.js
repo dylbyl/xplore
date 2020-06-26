@@ -55,7 +55,7 @@ class TaskList extends Component {
           </section>
           <div className="route-card-container">
             {sortedRoutes.map((route) => (
-              <RouteCard key={route.id} routeProp={route} {...this.props} deleteRoute={this.deleteRoute}/>
+              <RouteCard key={route.id} routeProp={route} {...this.props}/>
             ))}
           </div>
             

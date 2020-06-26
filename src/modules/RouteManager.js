@@ -34,5 +34,14 @@ export default {
       method: "DELETE"
   })
   .then(result => result.json())
-}
+},
+update(editedRoute) {
+  return fetch(`${remoteURL}/routes/${editedRoute.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(editedRoute)
+  }).then(data => data.json());
+},
 }
