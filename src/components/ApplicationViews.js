@@ -4,6 +4,10 @@ import Home from "./home/Home.js";
 import Dashboard from "./routes/Dashboard"
 import RouteForm from "./routes/RouteForm"
 import RouteDetail from "./routes/RouteDetail"
+import RouteEditForm from "./routes/RouteEditForm"
+import CommentForm from "./comments/CommentForm"
+import Login from "./auth/Login"
+import Register from "./auth/Register"
 //import Login from "./auth/Login";
 
 class ApplicationViews extends Component {
@@ -18,7 +22,7 @@ class ApplicationViews extends Component {
             exact
             path="/"
             render={(props) => {
-                return <Home />;
+                return <Home {...props}/>;
             }}
           />
           <Route
@@ -36,7 +40,7 @@ class ApplicationViews extends Component {
             }}
           />
           <Route
-        exact
+          exact
           path="/routes/:routeId(\d+)"
           render={(props) => {
               return (
@@ -44,6 +48,38 @@ class ApplicationViews extends Component {
               );
           }}
         />
+        <Route
+        exact
+          path="/routes/:routeId(\d+)/comment"
+          render={(props) => {
+              return (
+                <CommentForm routeId={parseInt(props.match.params.routeId)} {...props}/>
+              );
+          }}
+        />
+        <Route
+        exact
+          path="/edit/:routeId(\d+)"
+          render={(props) => {
+              return (
+                <RouteEditForm routeId={parseInt(props.match.params.routeId)} {...props}/>
+              );
+          }}
+        />
+        <Route
+            exact
+            path="/login"
+            render={(props) => {
+                return <Login {...props}/>;
+            }}
+          />
+          <Route
+            exact
+            path="/register"
+            render={(props) => {
+                return <Register {...props}/>;
+            }}
+          />
         </React.Fragment>
       );
     }

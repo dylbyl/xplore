@@ -11,6 +11,12 @@
       "username": "joshb",
       "email": "josh@josh.com",
       "password": "123"
+    },
+    {
+      "username": "dyl_by1",
+      "email": "dylan@dyl.com",
+      "password": "123",
+      "id": 3
     }
   ],
   "routes": [
@@ -21,7 +27,7 @@
       "routeName": "Cat Statue Hunt",
       "routeLength": "10 minutes",
       "directions": "Walk west towards 8th Street. Make a left there and continue following the park's outer trail. Make a left toward the parking lot. Continue on the trail past the lot until you see a stone table on the right.",
-      "tagId": "2",
+      "tagId": 2,
       "date": "06/20/2020"
     },
     {
@@ -31,18 +37,28 @@
       "routeName": "Majorly Cracked Sidewalk",
       "routeLength": "5 minutes",
       "directions": "If an uprooted sidewalk you must see, 50 paces north you must be",
-      "tagId": "1",
+      "tagId": 1,
       "date": "06/20/2020"
     },
     {
+      "id": 3,
       "userId": 1,
-      "locationId": "1",
-      "routeName": "asd asdasdasda sda sda sd d  dsaasdasdasdasd",
-      "routeLength": "asd",
+      "locationId": 1,
+      "routeName": "asd",
+      "routeLength": "4 minutes",
       "directions": "asdasd",
-      "tagId": "1",
-      "date": "06/23/2020",
-      "id": 3
+      "tagId": 1,
+      "date": "06/23/2020"
+    },
+    {
+      "userId": "3",
+      "locationId": "1",
+      "routeName": "asdasdsdasd",
+      "routeLength": "ddasd",
+      "directions": "asdas",
+      "tagId": "4",
+      "date": "06/25/2020",
+      "id": 4
     }
   ],
   "tags": [
@@ -76,6 +92,7 @@
       "id": 1,
       "routeId": 2,
       "userId": 1,
+      "username": "dyl_byl",
       "text": "this is literally just a cracked sidewalk",
       "date": "06/21/2020"
     },
@@ -83,8 +100,33 @@
       "id": 2,
       "routeId": 1,
       "userId": 2,
+      "username": "joshb",
       "text": "Cute but I guarantee it'll be gone by tomorrow",
       "date": "06/20/2020"
+    },
+    {
+      "id": 3,
+      "routeId": 2,
+      "userId": 2,
+      "username": "joshb",
+      "text": "hell yea cracked sidewalk",
+      "date": "06/23/2020"
+    },
+    {
+      "id": 5,
+      "routeId": 1,
+      "userId": 2,
+      "username": "joshb",
+      "text": "Gone",
+      "date": "06/21/2020"
+    },
+    {
+      "userId": 1,
+      "username": "dyl_byl",
+      "routeId": 1,
+      "text": "sdf",
+      "date": "06/25/2020",
+      "id": 4
     }
   ],
   "locations": [

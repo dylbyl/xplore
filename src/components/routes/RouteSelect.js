@@ -6,7 +6,7 @@ class RouteSelect extends Component {
 
         return(
             <>
-            <option value={this.props.tagProp.id}>{this.props.tagProp.name}</option>
+            <option value={this.props.selectProp.id}>{this.props.selectProp.name}</option>
             </>
         )}
 }
