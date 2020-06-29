@@ -1,9 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import RouteManager from "../../modules/RouteManager";
 import RouteSelect from "./RouteSelect";
 import "./RouteForm.css"
-import ReactMapGL, { Marker, NavigationControl } from "react-map-gl";
+import ReactMapGL, { Marker} from "react-map-gl";
 import Pin from "./Pin.js";
+import MapboxManager from "../../modules/MapboxManager"
 
 class RouteForm extends Component {
   state = {
@@ -13,7 +14,6 @@ class RouteForm extends Component {
     directions: "",
     tagId: undefined,
     tags: [],
-    locations: [],
     date: new Date(),
     loadingStatus: true,
     viewport: {
@@ -40,7 +40,7 @@ class RouteForm extends Component {
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
     this.state.locations.forEach(location => {
-       if (location.id == evt.target.value){
+       if (location.id === evt.target.value){
          const viewport = {
           ...this.state.viewport,
           longitude: location.longitude,
@@ -88,49 +88,56 @@ class RouteForm extends Component {
       this.state.routeName === "" ||
       this.state.routeLength === "" ||
       this.state.directions === "" ||
-      this.state.locationId === undefined ||
+      this.state.marker.longitude == null ||
       this.state.tagId === undefined
     ) {
-      window.alert("Please input something in all fields");
+      window.alert("Please input something in all fields and select a location on the map");
     } else {
-      this.setState({ loadingStatus: true });
-      const route = {
-        userId: localStorage.getItem("userId"),
-        locationId: this.state.locationId,
-        routeName: this.state.routeName,
-        routeLength: this.state.routeLength,
-        directions: this.state.directions,
-        tagId: this.state.tagId,
-        date: todayString
-      };
+      MapboxManager.getAddress(this.state.marker.longitude, this.state.marker.latitude)
+      .then((results) => {
 
-      // Create the task and redirect user to task list
-      RouteManager.post(route).then(() => this.props.history.push("/dash"));
+        let addressName = results.features[0]["place_name"]
+        this.setState({ loadingStatus: true });
+        const route = {
+          userId: localStorage.getItem("userId"),
+          address: addressName,
+          routeName: this.state.routeName,
+          routeLength: this.state.routeLength,
+          directions: this.state.directions,
+          tagId: this.state.tagId,
+          longitude: this.state.marker.longitude,
+          latitude: this.state.marker.latitude,
+          date: todayString
+        };
+  
+        // Create the task and redirect user to task list
+        RouteManager.post(route).then(() => this.props.history.push("/dash"));
+      })
     }
   };
+
+  handleMapClick = (ev) => {
+    const lng = ev.lngLat[0];
+    const lat = ev.lngLat[1];
+    const marker = {
+      ...this.state.marker,
+      longitude: lng,
+      latitude: lat,
+    };
+    this.setState({ marker })
+   }
 
   componentDidMount() {
     //getAll from TaskManager and hang on to that data; put it in state
     RouteManager.getAllTags().then((tags) => {
       this.setState({
-        tags: tags
-      });
-
-      RouteManager.getAllLocations().then((locations) => {
-        this.setState({
-          locations: locations,
+        tags: tags,
           loadingStatus: false,
         });
       });
-    });
-
-    
   }
 
   render() {
-    let sortedLocations = this.state.locations.sort((a, b) =>
-    a.name > b.name ? 1 : -1
-  );
     return (
       <>
         <div className="route-center">
@@ -138,6 +145,8 @@ class RouteForm extends Component {
             <fieldset>
               <div className="route-form">
                 <h3 className="route-header">Add a New Route</h3>
+                <b>Select a starting location on the map</b>
+                <br />
                 <label htmlFor="routeName">Route Name</label>
                 <input
                   type="text"
@@ -156,18 +165,6 @@ class RouteForm extends Component {
                   <option value="undefined">--Select--</option>
                   {this.state.tags.map((tagFromState) => (
                     <RouteSelect selectProp={tagFromState} key={tagFromState.id} />
-                  ))}
-                </select>
-                <br />
-                <label htmlFor="locationId">Starting Location</label>
-                <select
-                  name="locationId"
-                  id="locationId"
-                  onChange={this.handleLocationChange}
-                >
-                  <option value="undefined">--Select--</option>
-                  {sortedLocations.map((locationFromState) => (
-                    <RouteSelect selectProp={locationFromState} key={locationFromState.id} />
                   ))}
                 </select>
                 <br />
@@ -220,6 +217,7 @@ class RouteForm extends Component {
                 "pk.eyJ1IjoiZHlsYnlsIiwiYSI6ImNrYmh6M2M0YTBhNmcycm04bzF0MGVxNGMifQ.zH776ZxDF0GCyvco-a2WiQ"
               }
               onViewportChange={(viewport) => this.setState({ viewport })}
+              onClick={this.handleMapClick}
             >
               <Marker
                 longitude={this.state.marker.longitude - 0.0001}

@@ -23,42 +23,14 @@
     {
       "id": 1,
       "userId": 1,
-      "locationId": 1,
-      "routeName": "Cat Statue Hunt",
-      "routeLength": "10 minutes",
-      "directions": "Walk west towards 8th Street. Make a left there and continue following the park's outer trail. Make a left toward the parking lot. Continue on the trail past the lot until you see a stone table on the right.",
-      "tagId": 2,
-      "date": "06/20/2020"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "locationId": 1,
-      "routeName": "Majorly Cracked Sidewalk",
-      "routeLength": "5 minutes",
-      "directions": "If an uprooted sidewalk you must see, 50 paces north you must be",
-      "tagId": 1,
-      "date": "06/20/2020"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "locationId": 1,
-      "routeName": "asd",
+      "address": "2828 1st Avenue, Huntington, West Virginia 25702, United States",
+      "routeName": "St Mary's",
       "routeLength": "4 minutes",
-      "directions": "asdasd",
-      "tagId": 1,
-      "date": "06/23/2020"
-    },
-    {
-      "userId": "3",
-      "locationId": "1",
-      "routeName": "asdasdsdasd",
-      "routeLength": "ddasd",
-      "directions": "asdas",
-      "tagId": "4",
-      "date": "06/25/2020",
-      "id": 4
+      "directions": "asd",
+      "tagId": 5,
+      "longitude": -82.40116817506221,
+      "latitude": 38.43177782727424,
+      "date": "06/29/2020"
     }
   ],
   "tags": [
@@ -87,96 +59,5 @@
       "name": "Riddle Route"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "routeId": 2,
-      "userId": 1,
-      "username": "dyl_byl",
-      "text": "this is literally just a cracked sidewalk",
-      "date": "06/21/2020"
-    },
-    {
-      "id": 2,
-      "routeId": 1,
-      "userId": 2,
-      "username": "joshb",
-      "text": "Cute but I guarantee it'll be gone by tomorrow",
-      "date": "06/20/2020"
-    },
-    {
-      "id": 3,
-      "routeId": 2,
-      "userId": 2,
-      "username": "joshb",
-      "text": "hell yea cracked sidewalk",
-      "date": "06/23/2020"
-    },
-    {
-      "id": 5,
-      "routeId": 1,
-      "userId": 2,
-      "username": "joshb",
-      "text": "Gone",
-      "date": "06/21/2020"
-    },
-    {
-      "userId": 1,
-      "username": "dyl_byl",
-      "routeId": 1,
-      "text": "sdf",
-      "date": "06/25/2020",
-      "id": 4
-    }
-  ],
-  "locations": [
-    {
-      "id": 1,
-      "name": "Ritter Park Fountain",
-      "latitude": 38.4084,
-      "longitude": -82.4386
-    },
-    {
-      "id": 2,
-      "name": "Pullman Square",
-      "latitude": 38.4222,
-      "longitude": -82.4434
-    },
-    {
-      "id": 3,
-      "name": "Marshall University",
-      "latitude": 38.4221,
-      "longitude": -82.4288
-    },
-    {
-      "id": 4,
-      "name": "St. Mary's Medical Center",
-      "latitude": 38.4316,
-      "longitude": -82.4011
-    },
-    {
-      "id": 5,
-      "name": "Cabell Huntington Hospital",
-      "latitude": 38.4098,
-      "longitude": -82.4281
-    },
-    {
-      "id": 6,
-      "name": "Camden Park",
-      "latitude": 38.3969,
-      "longitude": -82.5301
-    },
-    {
-      "id": 7,
-      "name": "Veterans Affairs Medical Center",
-      "latitude": 38.3771,
-      "longitude": -82.5175
-    },
-    {
-      "id": 8,
-      "name": "David Harris Riverfront Park",
-      "latitude": 38.4244,
-      "longitude": -82.4405
-    }
-  ]
+  "comments": []
 }

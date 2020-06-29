@@ -3,7 +3,7 @@ import RouteManager from "../../modules/RouteManager";
 import CommentManager from "../../modules/CommentManager";
 import CommentCard from "../comments/CommentCard"
 import CommentForm from "../comments/CommentForm"
-import ReactMapGL, { Marker, NavigationControl } from "react-map-gl";
+import ReactMapGL, { Marker } from "react-map-gl";
 import Pin from "./Pin.js";
 import "./RouteDetail.css"
 
@@ -72,7 +72,7 @@ class BookDetail extends Component {
             id: route.id,
             userId: route.userId,
             routeName: route.routeName,
-            location: route.location.name,
+            address: route.address,
             username: route.user.username,
             routeLength: route.routeLength,
             tag: route.tag.name,
@@ -83,13 +83,13 @@ class BookDetail extends Component {
             viewport: {
               width: 400,
               height: 400,
-              latitude: route.location.latitude,
-              longitude: route.location.longitude,
+              latitude: route.latitude,
+              longitude: route.longitude,
               zoom: 16,
             },
             marker: {
-              longitude: route.location.longitude,
-              latitude: route.location.latitude,
+              longitude: route.longitude,
+              latitude: route.latitude,
             },
         });
     })
@@ -107,7 +107,7 @@ class BookDetail extends Component {
       <div className="route-detail">
         <div className="route-detail-content">
         <h3 className="route-header">{this.state.routeName}</h3>
-          <b>Location: </b>{this.state.location}
+          <b>Address: </b>{this.state.address}
           <br />
           <b>Posted by: </b>{this.state.username}
           <br />
@@ -121,7 +121,7 @@ class BookDetail extends Component {
           <br/>
           Posted on {this.state.date}
           <br />
-          {this.state.userId == localStorage.getItem("userId") ? 
+          {this.state.userId === localStorage.getItem("userId") ? 
             <>
             <button
             type="button"

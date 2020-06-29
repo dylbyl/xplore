@@ -39,11 +39,11 @@ class TaskList extends Component {
   render() {
     let filteredRoutes = ""
 
-    if (this.state.tagId == "undefined"){
+    if (this.state.tagId === "undefined"){
       filteredRoutes = this.state.routes
     }
     else {
-      filteredRoutes = this.state.routes.filter(route => route.tag.id == this.state.tagId)
+      filteredRoutes = this.state.routes.filter(route => route.tag.id === this.state.tagId)
     }
 
     let sortedRoutes = filteredRoutes.sort((a, b) =>

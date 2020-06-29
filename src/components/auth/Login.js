@@ -29,8 +29,8 @@ class Login extends Component {
     */ this.state.users.forEach(
       (user) => {
         if (
-          this.state.email == user.email &&
-          this.state.password == user.password
+          this.state.email === user.email &&
+          this.state.password === user.password
         ) {
           login = true;
           loginUserId = user.id;
@@ -38,7 +38,7 @@ class Login extends Component {
         }
       }
     );
-    if (login == true) {
+    if (login === true) {
       localStorage.setItem("userId", loginUserId);
       localStorage.setItem("username", loginUsername);
       this.props.history.push("/");

@@ -35,16 +35,16 @@ class RegisterForm extends Component {
       let register = true;
 
       this.state.users.forEach((user) => {
-        if (user.email == this.state.email && register == true) {
+        if (user.email === this.state.email && register === true) {
           window.alert("This email address has already been taken!");
           register = false;
-        } else if (user.username == this.state.username && register == true) {
+        } else if (user.username === this.state.username && register === true) {
           window.alert("This username has already been taken!");
           register = false
         }
       });
 
-      if (register == true) {
+      if (register === true) {
         
         const newUser = {
           username: this.state.username,
