@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
 import "../routes/RouteCard.css";
-
-//TODO: Add tags to card, not clickable. Filter willl be handled by a dropdown menu at the top of Dashboard
 
 class CommentCard extends Component {
   render() {
@@ -14,7 +11,7 @@ class CommentCard extends Component {
           <br />
           {this.props.commentProp.text}
           <br />
-          {this.props.commentProp.userId == localStorage.getItem("userId") ? (
+          {this.props.commentProp.userId === localStorage.getItem("userId") ? (
             <button
               type="button"
               className="route-btn"

@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import CommentManager from "../../modules/CommentManager";
 import "../routes/RouteForm.css"
 
@@ -58,16 +58,13 @@ class CommentForm extends Component {
       // Create the task and redirect user to task list
       CommentManager.post(comment).then(() => {
           this.setState({
+            text: "",
               loadingStatus: false
           })
           this.props.reloadComments()
         });
     }
   };
-
-  componentDidMount() {
-    
-  }
 
   render() {
     return (
@@ -85,6 +82,7 @@ class CommentForm extends Component {
                   onChange={this.handleFieldChange}
                   id="text"
                   placeholder="Comment text"
+                  value={this.state.text}
                 />
                 <br />
                 <button

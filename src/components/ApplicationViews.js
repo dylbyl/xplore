@@ -13,7 +13,7 @@ import Register from "./auth/Register"
 class ApplicationViews extends Component {
     // Check if credentials are in local storage
     //returns true/false
-    isAuthenticated = () => localStorage.getItem("credentials") !== null;
+    isAuthenticated = () => localStorage.getItem("userId") !== null;
   
     render() {
       return (
@@ -29,41 +29,61 @@ class ApplicationViews extends Component {
             exact
             path="/dash"
             render={(props) => {
+              if (this.isAuthenticated()) {
                 return <Dashboard {...props}/>;
+              } else {
+                return <Redirect to="/" />
+               }
             }}
           />
           <Route
             exact
             path="/add"
             render={(props) => {
+              if (this.isAuthenticated()) {
                 return <RouteForm {...props}/>;
+              } else {
+                return <Redirect to="/" />
+               }
             }}
           />
           <Route
           exact
           path="/routes/:routeId(\d+)"
           render={(props) => {
+            if (this.isAuthenticated()) {
               return (
                 <RouteDetail routeId={parseInt(props.match.params.routeId)} {...props}/>
               );
+            } else {
+              return <Redirect to="/" />
+             }
           }}
         />
         <Route
         exact
           path="/routes/:routeId(\d+)/comment"
           render={(props) => {
+            if (this.isAuthenticated()) {
               return (
                 <CommentForm routeId={parseInt(props.match.params.routeId)} {...props}/>
               );
+            } else {
+              return <Redirect to="/" />
+             }
           }}
         />
         <Route
         exact
           path="/edit/:routeId(\d+)"
           render={(props) => {
+            if (this.isAuthenticated()) {
               return (
                 <RouteEditForm routeId={parseInt(props.match.params.routeId)} {...props}/>
               );
+            } else {
+              return <Redirect to="/" />
+             }
           }}
         />
         <Route

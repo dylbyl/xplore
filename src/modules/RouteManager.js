@@ -2,11 +2,11 @@ const remoteURL = "http://localhost:8088"
 
 export default {
   getAllWithInfo() {
-    return fetch(`${remoteURL}/routes?_embed=comments&_expand=tag&_expand=location&_expand=user`)
+    return fetch(`${remoteURL}/routes?_embed=comments&_expand=tag&_expand=user`)
     .then(result => result.json())
   },
   getSingleWithInfo(routeId) {
-    return fetch(`${remoteURL}/routes/${routeId}?_embed=comments&_expand=tag&_expand=location&_expand=user`)
+    return fetch(`${remoteURL}/routes/${routeId}?_embed=comments&_expand=tag&_expand=user`)
     .then(result => result.json())
   },
   getAllTags() {
