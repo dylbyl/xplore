@@ -43,7 +43,7 @@ class TaskList extends Component {
       filteredRoutes = this.state.routes
     }
     else {
-      filteredRoutes = this.state.routes.filter(route => route.tag.id === this.state.tagId)
+      filteredRoutes = this.state.routes.filter(route => route.tag.id === parseInt(this.state.tagId))
     }
 
     let sortedRoutes = filteredRoutes.sort((a, b) =>
@@ -71,7 +71,7 @@ class TaskList extends Component {
                   onChange={this.handleFilterChange}
                 >
                   <option value="undefined">--Select a tag to filter--</option>
-                  <option value="undefined">None</option>
+                  <option value="undefined">View all</option>
                   {this.state.tags.map((tagFromState) => (
                     <RouteSelect selectProp={tagFromState} key={tagFromState.id} />
                   ))}

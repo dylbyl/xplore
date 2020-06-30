@@ -54,7 +54,6 @@ class Login extends Component {
         users: users,
         loadingStatus: false,
       });
-      console.log(this.state.users);
     });
   }
 

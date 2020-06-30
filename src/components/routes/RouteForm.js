@@ -128,10 +128,9 @@ class RouteForm extends Component {
    }
 
   componentDidMount() {
-    //getAll from TaskManager and hang on to that data; put it in state
     RouteManager.getAllTags().then((tags) => {
       this.setState({
-        tags: tags,
+          tags: tags,
           loadingStatus: false,
         });
       });
@@ -177,7 +176,7 @@ class RouteForm extends Component {
                   placeholder="Time length of route"
                 />
                 <br />
-                <label htmlFor="directions"><b>Route Directions</b></label>
+                <label htmlFor="directions"><b>Route Directions, separated by line break</b></label>
                 <br />
                 <textarea
                   required

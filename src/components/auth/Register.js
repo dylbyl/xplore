@@ -40,21 +40,49 @@ class RegisterForm extends Component {
           register = false;
         } else if (user.username === this.state.username && register === true) {
           window.alert("This username has already been taken!");
-          register = false
+          register = false;
         }
       });
 
       if (register === true) {
-        
         const newUser = {
           username: this.state.username,
           email: this.state.email,
           password: this.state.password,
         };
 
-        // Create the animal and redirect user to animal list
-        RegisterManager.post(newUser).then(() => this.props.history.push("/"));
-      }else{
+        RegisterManager.post(newUser).then(() => {
+          RegisterManager.getAll().then((users) => {
+            let usersFromAPI = users;
+
+            let login = false;
+            let loginUserId = 0;
+            let loginUsername = "";
+            
+            usersFromAPI.forEach(
+              (user) => {
+                if (
+                  this.state.email === user.email &&
+                  this.state.password === user.password
+                ) {
+                  login = true;
+                  loginUserId = user.id;
+                  loginUsername = user.username;
+                }
+              }
+            );
+            if (login === true) {
+              localStorage.setItem("userId", loginUserId);
+              localStorage.setItem("username", loginUsername);
+              this.props.history.push("/");
+            } else {
+              window.alert(
+                "Your email and password combination was not recognized!"
+              );
+            }
+          });
+        });
+      } else {
         this.setState({ loadingStatus: false });
       }
     }
@@ -76,7 +104,7 @@ class RegisterForm extends Component {
       <>
         <form className="home-form">
           <fieldset>
-              <h3 className="home-header-large">Register an account</h3>
+            <h3 className="home-header-large">Register an account</h3>
             <div>
               <label htmlFor="username">Username</label>
               <input
@@ -106,24 +134,24 @@ class RegisterForm extends Component {
               />
             </div>
 
-              <button
+            <button
               className="home-btn"
-                type="button"
-                disabled={this.state.loadingStatus}
-                onClick={this.constructNewUser}
-              >
-                Register
-              </button>
-              <button
+              type="button"
+              disabled={this.state.loadingStatus}
+              onClick={this.constructNewUser}
+            >
+              Register
+            </button>
+            <button
               className="home-btn"
-            disabled={this.state.loadingStatus}
-            type="button"
-            onClick={() => {
-              this.props.history.push("/login");
-            }}
-          >
-            Back to Login
-          </button>
+              disabled={this.state.loadingStatus}
+              type="button"
+              onClick={() => {
+                this.props.history.push("/login");
+              }}
+            >
+              Back to Login
+            </button>
           </fieldset>
         </form>
       </>

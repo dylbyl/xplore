@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "../routes/RouteCard.css";
 
-//TODO: Add tags to card, not clickable. Filter willl be handled by a dropdown menu at the top of Dashboard
-
 class CommentCard extends Component {
   render() {
     return (
