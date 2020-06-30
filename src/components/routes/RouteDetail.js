@@ -6,7 +6,6 @@ import CommentForm from "../comments/CommentForm";
 import ReactMapGL, { Marker } from "react-map-gl";
 import Pin from "./Pin.js";
 import "./RouteDetail.css";
-import DirectionManager from "../../modules/DirectionManager";
 
 class BookDetail extends Component {
   state = {
@@ -20,7 +19,6 @@ class BookDetail extends Component {
     directions: "",
     date: "",
     comments: [],
-    directionsArray: [],
     loadingStatus: true,
     viewport: {
       width: 400,

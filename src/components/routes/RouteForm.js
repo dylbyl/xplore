@@ -128,6 +128,15 @@ class RouteForm extends Component {
    }
 
   componentDidMount() {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      const viewport = {
+        ...this.state.viewport,
+        latitude: pos.coords.latitude,
+        longitude: pos.coords.longitude,
+      }
+      this.setState({ viewport })
+    })
+
     RouteManager.getAllTags().then((tags) => {
       this.setState({
           tags: tags,

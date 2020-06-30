@@ -72,3 +72,9 @@ fieldset .formgrid {
     text-align: center;
     margin: 1em;
 }
+
+.home-content{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
