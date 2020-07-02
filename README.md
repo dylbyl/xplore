@@ -12,7 +12,7 @@ Visit [the Xplore GitHub page](https://github.com/dylbyl/xplore) and clone the b
 
 Open a second GitBash terminal and navigate to the API folder within the root project folder. Run the command "json-server -p 8088 -w xplore.json" to start the JSON server. The app should now be fully functional within the browser window.
 
-### Register and Login
+## Register and Login
 
 ![Home Page](src/components/images/home.png)
 
@@ -22,7 +22,7 @@ On opening the app, you're greeted by the Home screen. Most notable this contain
 
 Registration takes a unique email and username, as well as a password. You must input all three to proceed. Upon registration, you'll be automatically logged in and returned to the Home screen.
 
-### Browsing Routes
+## Browsing Routes
 
 ![Dashboard](src/components/images/dash.png)
 
@@ -38,7 +38,7 @@ On the left, there's a button and a dropdown menu. The button will take you to a
 
 Clicking the Add Route button on the dashboard brings you to a new page. Here, you can create a route by entering a name for the route, its purpose, its length, directions for the route, and the location it starts at. The map on the right centers on your current location, but can be dragged and scrolled to travel to a new location. Clicking the map drops a marker, signifying the starting location of your route.
 
-### Route Detail
+## Route Detail
 
 ![Route Detail Page](src/components/images/view-route.png)
 
