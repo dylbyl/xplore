@@ -78,7 +78,7 @@ class CommentForm extends Component {
                   type="text"
                   required
                   rows="5"
-                  cols="40"
+                  cols="60"
                   onChange={this.handleFieldChange}
                   id="text"
                   placeholder="Comment text"
