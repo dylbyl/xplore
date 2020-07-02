@@ -45,40 +45,88 @@
       "date": "06/29/2020"
     },
     {
-      "id": 2,
-      "userId": 4,
-      "address": "1501 12th Street, Huntington, West Virginia 25701, United States",
-      "routeName": "Ritter Park Walk",
+      "userId": "5",
+      "address": "20606 US Route 23, Greenup, Kentucky 41144, United States",
+      "routeName": "Creepy Church",
       "routeLength": "20 minutes",
-      "directions": " - Walk around the park three times\n -You will get dizzy and things will look cool",
-      "tagId": 4,
-      "longitude": -82.43846655180685,
-      "latitude": 38.408262863757486,
-      "date": "06/29/2020"
+      "directions": "1. Look for traffic as you cross US 23. Be safe!\n2. Follow Ohio River Road for approximately 1 mile.\n3. Continue following the road, do not take any turns. Enjoy the wildflowers and intermittent shade.\n4. As the road ends, look to your left. Enjoy the decrepit church and wonder what it was like in the old days!",
+      "tagId": "4",
+      "longitude": -82.87867826088838,
+      "latitude": 38.66316268327289,
+      "date": "07/01/2020",
+      "id": 5
     },
     {
-      "id": 3,
-      "userId": 4,
-      "address": "1509 Ritter Park Drive, Huntington, West Virginia 25701, United States",
-      "routeName": "Goin for a walk",
-      "routeLength": "2 hours",
-      "directions": "1. walk to the left\n2. walk to the right\n3. go in circles",
+      "userId": "1",
+      "address": "Greysbranch Elementary, Greenup, Kentucky 41144, United States",
+      "routeName": "Pride Athletics",
+      "routeLength": "20 minutes",
+      "directions": " - Start in parking lot of Pride Athletics\n - Walk to US 23, turn left\n - Make a left to walk to Greenup County Board of Education\n - Retrace steps back to Pride Athletics",
+      "tagId": "5",
+      "longitude": -82.8700677797705,
+      "latitude": 38.63249430440094,
+      "date": "07/02/2020",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "address": "1298 Neds Fork Road, Kitts Hill, Ohio 45645, United States",
+      "routeName": "Cows and Farm Life",
+      "routeLength": "10 Minutes",
+      "directions": " - Start at my old house\n - Walk south along Ned's Fork\n - Look to your right and enjoy the view of cows, goats, and a little farm",
+      "tagId": "1",
+      "longitude": -82.55972177904958,
+      "latitude": 38.5468059013117,
+      "date": "07/02/2020",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "address": "1006 13th Avenue, Huntington, West Virginia 25701, United States",
+      "routeName": "Cat Statue",
+      "routeLength": "5 minutes",
+      "directions": " - Start at Ritter Park Fountain\n - Walk on park trail along 13th Ave, towards 8th Street\n - Follow trail along 8th Street and across parking lot\n - Just past parking lot, look for stone tables on your right\n - Look at the little cat statue on the table!",
       "tagId": "2",
-      "longitude": -82.4341860115961,
-      "latitude": 38.40373151598092,
-      "date": "06/29/2020"
+      "longitude": -82.43851787332756,
+      "latitude": 38.408380079263225,
+      "date": "07/02/2020",
+      "id": 8
     },
     {
-      "id": 4,
-      "userId": 4,
-      "address": "Poplar Flat Road West, Kitts Hill, Ohio 45645, United States",
-      "routeName": "Walking around ritter park",
-      "routeLength": "f",
-      "directions": "f",
-      "tagId": 1,
-      "longitude": -82.60011398911297,
-      "latitude": 38.570968816263665,
-      "date": "06/29/2020"
+      "userId": "1",
+      "address": "Chattin Drive, Ashland, Kentucky 41101, United States",
+      "routeName": "Perfect Pokemon GO Walk",
+      "routeLength": "20 Minutes",
+      "directions": "test directions",
+      "tagId": "5",
+      "longitude": -82.63967140493418,
+      "latitude": 38.47352868191754,
+      "date": "07/02/2020",
+      "id": 9
+    },
+    {
+      "userId": "1",
+      "address": "Cs-2530, Ashland, Kentucky 41101, United States",
+      "routeName": "Brisk Break Walk",
+      "routeLength": "30 Minutes",
+      "directions": "Perfect walk to take on your break from a mall job",
+      "tagId": "3",
+      "longitude": -82.65257185581825,
+      "latitude": 38.48378908115666,
+      "date": "07/02/2020",
+      "id": 10
+    },
+    {
+      "userId": "1",
+      "address": "Veterans Memorial Boulevard, Huntington, West Virginia 25701, United States",
+      "routeName": "Riverfront Treasure",
+      "routeLength": "10 Minutes",
+      "directions": "A secret treasure from all things tree,\nA chunk of dead wood, that is me\n\nFind me along the trail of yore,\nBut be quick- soon I'll be lost forevermore",
+      "tagId": "6",
+      "longitude": -82.44522658974414,
+      "latitude": 38.42280523704613,
+      "date": "07/02/2020",
+      "id": 11
     }
   ],
   "tags": [
@@ -109,14 +157,6 @@
   ],
   "comments": [
     {
-      "userId": "3",
-      "username": "dyl_by1",
-      "routeId": 1,
-      "text": "comment test",
-      "date": "06/29/2020",
-      "id": 1
-    },
-    {
       "userId": "4",
       "username": "jordancastelloe",
       "routeId": 1,
@@ -131,6 +171,14 @@
       "text": "i do this sometimes",
       "date": "06/29/2020",
       "id": 3
+    },
+    {
+      "userId": "1",
+      "username": "dyl_byl",
+      "routeId": 5,
+      "text": "i hate walking by this place alone! put up a warning next time!",
+      "date": "07/01/2020",
+      "id": 4
     }
   ]
 }

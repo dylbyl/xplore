@@ -226,6 +226,7 @@ class RouteForm extends Component {
               }
               onViewportChange={(viewport) => this.setState({ viewport })}
               onClick={this.handleMapClick}
+              mapStyle='mapbox://styles/mapbox/streets-v11'
             >
               <Marker
                 longitude={this.state.marker.longitude - 0.0001}

@@ -79,11 +79,11 @@ class BookDetail extends Component {
         comments: route.comments,
         loadingStatus: false,
         viewport: {
-          width: 400,
-          height: 400,
+          width: 550,
+          height: 550,
           latitude: route.latitude,
           longitude: route.longitude,
-          zoom: 16,
+          zoom: 15,
         },
         marker: {
           longitude: route.longitude,
@@ -99,7 +99,6 @@ class BookDetail extends Component {
     );
 
     let splitDirections = this.state.directions.split(`\n`)
-    console.log(splitDirections)
 
     return (
       <>
@@ -122,7 +121,7 @@ class BookDetail extends Component {
                 <br />
                 <h4>Directions: </h4>
                 {splitDirections.map((direction) => {
-                  return <p>{direction}</p>
+                  return <p key={direction}>{direction}</p>
                 })}
                 <br />
                 Posted on {this.state.date}
@@ -187,6 +186,7 @@ class BookDetail extends Component {
               "pk.eyJ1IjoiZHlsYnlsIiwiYSI6ImNrYmh6M2M0YTBhNmcycm04bzF0MGVxNGMifQ.zH776ZxDF0GCyvco-a2WiQ"
             }
             onViewportChange={(viewport) => this.setState({ viewport })}
+            mapStyle='mapbox://styles/mapbox/streets-v11'
           >
             <Marker
               longitude={this.state.marker.longitude - 0.0001}

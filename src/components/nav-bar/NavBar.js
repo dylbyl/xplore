@@ -10,10 +10,8 @@ class NavBar extends Component {
         <Navbar bg="success" variant="dark">
           <Navbar.Brand href="/">xplore</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">Login / Logout</Nav.Link>
             <Nav.Link href="/dash">Dashboard</Nav.Link>
-            <Nav.Link href="/saved">Saved</Nav.Link>
-            <Nav.Link href="/profile">Profile</Nav.Link>
           </Nav>
         </Navbar>
       </header>

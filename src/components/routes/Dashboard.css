@@ -22,7 +22,10 @@
         width: 75%;
         margin: 1em;
         word-wrap: break-word;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.dash-btn:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 

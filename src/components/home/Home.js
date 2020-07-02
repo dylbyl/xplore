@@ -10,11 +10,11 @@ class Home extends Component {
     routes: [],
     loadingStatus: true,
     viewport: {
-      width: 450,
-      height: 450,
-      latitude: 36,
-      longitude: -92,
-      zoom: 2,
+      width: 1900,
+      height: 550,
+      latitude: 38.5245,
+      longitude: -82.6202,
+      zoom: 10,
     },
     marker: {
       longitude: null,
@@ -81,34 +81,34 @@ class Home extends Component {
   render() {
     return (
       <>
-      <section className="home-content">
-      <section className="home-card">
-        <h2 className="home-header-large">Welcome to xplore!</h2>
-        <br />
-        {this.checkLogoutButton()}
-      </section>
-      <section className="map-section">
-      <h4 className="home-header-large">Look at all of our routes!</h4>
-      <ReactMapGL
+    <ReactMapGL
       className="route-detail-map"
       {...this.state.viewport}
       mapboxApiAccessToken={
         "pk.eyJ1IjoiZHlsYnlsIiwiYSI6ImNrYmh6M2M0YTBhNmcycm04bzF0MGVxNGMifQ.zH776ZxDF0GCyvco-a2WiQ"
       }
       onViewportChange={(viewport) => this.setState({ viewport })}
+      mapStyle='mapbox://styles/mapbox/satellite-v9'
     >
       {this.state.routes.map((route) => {
         return <Marker
         longitude={route.longitude - 0.0001}
         latitude={route.latitude + 0.0001}
       >
+        <b className="map-text">{route.routeName}
+        <br /></b>
         <Pin size={20} />
       </Marker>
 
       })}
       
     </ReactMapGL>
-    </section>
+    <section className="home-content">
+      <section className="home-card">
+        <h2 className="home-header-large">Welcome to xplore!</h2>
+        <br />
+        {this.checkLogoutButton()}
+      </section>
     </section>
     </>
     );
