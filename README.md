@@ -8,7 +8,7 @@ Xplore is for people who would like to experience nature and real-life in a mind
 
 ## Installing and Running the App
 
-Visit [the Xplore GitHub page](https://github.com/dylbyl/xplore) and clone the branch to your local machine. In a GitBash terminal, navigate to the root folder of the project and run the command "npm install" to install node modules for React Bootstrap, React Mapbox GL JS, and React Router DOM. Then run "npm start" to open the app in a browser window. We must first start our JSON server before we can fully explore the app.
+Visit [the Xplore GitHub page](https://github.com/dylbyl/xplore) and clone the branch to your local machine. In a GitBash terminal, navigate to the root folder of the project and run the command "npm install" to install node modules for React Bootstrap, React Mapbox GL JS, and React Router DOM. Then run "npm start" to open the app in a browser window. Also run "npm i json-server" to install JSON Server. We must first start our JSON server before we can fully explore the app.
 
 Open a second GitBash terminal and navigate to the API folder within the root project folder. Run the command "json-server -p 8088 -w xplore.json" to start the JSON server. The app should now be fully functional within the browser window.
 
