@@ -16,7 +16,7 @@ Open a second GitBash terminal and navigate to the API folder within the root pr
 
 ![Home Page](src/components/images/home.png)
 
-On opening the app, you're greeted by the Home screen. Most notable this contains a large map of the Huntington/Ashland/Ironton Tri-State area, showing all routes posted in the region. At the bottom of the page, you'll find buttons to login or register an account.
+On opening the app, you're greeted by the Home screen. Most notably, this contains a large map of the Huntington/Ashland/Ironton Tri-State area, showing all routes posted in the region. At the bottom of the page, you'll find buttons to login or register an account.
 
 ![Register Page](src/components/images/register.png)
 
